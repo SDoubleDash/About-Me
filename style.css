@@ -32,18 +32,18 @@ button:focus {
   outline-offset: 2px;
 }
 
-/* Custom bullet points */
+/* Custom bullet points - CACHE BUST v8 */
 .custom-bullet {
-  list-style: none;
-  padding-left: 0;
+  list-style: none !important;
+  padding-left: 0 !important;
 }
 
-.custom-bullet li {
+.custom-bullet > li {
   position: relative;
   padding-left: 1.25rem;
 }
 
-.custom-bullet li::before {
+.custom-bullet > li::before {
   content: '';
   position: absolute;
   left: 0;
@@ -54,13 +54,18 @@ button:focus {
   border-radius: 50%;
 }
 
-.custom-bullet-multiline li {
+.custom-bullet-multiline {
+  list-style: none !important;
+  padding-left: 0 !important;
+}
+
+.custom-bullet-multiline > li {
   padding-left: 1.25rem;
   padding-top: 0.25rem;
   position: relative;
 }
 
-.custom-bullet-multiline li::before {
+.custom-bullet-multiline > li::before {
   content: '';
   position: absolute;
   left: 0;
@@ -69,6 +74,71 @@ button:focus {
   height: 6px;
   background-color: var(--accent-color);
   border-radius: 50%;
+}
+
+/* Prevent bullet points on h3 elements */
+h3 {
+  list-style: none !important;
+  padding-left: 0 !important;
+}
+
+h3::before {
+  content: none !important;
+  display: none !important;
+}
+
+h3::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Check what's happening with list items */
+ul, ol {
+  list-style: disc !important;
+  padding-left: 1.5rem !important;
+}
+
+/* Collapsible sections - Small */
+.small-section-collapsed {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.small-section-expanded {
+  max-height: 800px;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in;
+}
+
+/* Collapsible sections - Large */
+.large-section-collapsed {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.75s ease-out;
+}
+
+.large-section-expanded {
+  max-height: 3000px;
+  overflow: hidden;
+  transition: max-height 0.75s ease-in;
+}
+
+/* Prevent bullet points in expanded sections */
+.section-expanded div {
+  list-style: none !important;
+  list-style-type: none !important;
+  list-style-image: none !important;
+}
+
+.section-expanded div::before {
+  content: none !important;
+  display: none !important;
+}
+
+.section-expanded div::after {
+  content: none !important;
+  display: none !important;
 }
 
 /* Background decorative elements */
@@ -160,3 +230,5 @@ button:focus {
 .job-accent-earlier {
   opacity: 0.4;
 }
+
+/* Contact section transitions - REMOVED - using standard approach */

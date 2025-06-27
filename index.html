@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stephen Wei – Resume</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css?v=1">
+    <link rel="stylesheet" href="style.css?v=13">
   </head>
   <body class="bg-gray-50 text-gray-800 font-sans relative overflow-x-hidden">
     <!-- Background decorative elements -->
@@ -32,32 +32,33 @@
           <button onclick="toggleSection('contact')" class="text-[#BF483F] hover:underline hover:text-[#A63A32] transition-colors duration-200">Contact Me</button>
         </div>
       </header>
-
-      <section class="mb-8" id="section-contact" style="display: none;">
+      
+      <section class="mb-8 relative" id="section-contact" style="display: none;">
+        <!-- Section accent line -->
+        <div class="section-accent"></div>
+        
         <div class="border-b border-[#CAC7C0] pb-1 mb-2">
           <h2 class="text-xl font-semibold text-gray-800">Get in Touch</h2>
         </div>
-        <form action="https://formspree.io/f/xqabwzqd" method="POST" class="space-y-4">
-          <div>
-            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
-            <input type="text" id="name" name="name" required class="w-full px-3 py-2 border border-[#CAC7C0] rounded-md focus:outline-none focus:ring-2 focus:ring-[#BF483F] focus:border-transparent bg-white">
-          </div>
-          <div>
-            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Your Email</label>
-            <input type="email" id="email" name="email" required class="w-full px-3 py-2 border border-[#CAC7C0] rounded-md focus:outline-none focus:ring-2 focus:ring-[#BF483F] focus:border-transparent bg-white">
-          </div>
-          <div>
-            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
-            <input type="text" id="subject" name="subject" required class="w-full px-3 py-2 border border-[#CAC7C0] rounded-md focus:outline-none focus:ring-2 focus:ring-[#BF483F] focus:border-transparent bg-white">
-          </div>
-          <div>
-            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
-            <textarea id="message" name="message" rows="4" required class="w-full px-3 py-2 border border-[#CAC7C0] rounded-md focus:outline-none focus:ring-2 focus:ring-[#BF483F] focus:border-transparent bg-white"></textarea>
-          </div>
-          <button type="submit" class="bg-[#BF483F] text-white py-2 px-6 rounded-md hover:bg-[#A63A32] transition-colors duration-200 text-sm font-medium">
-            Send Message
-          </button>
-        </form>
+        <div>
+          <form action="https://formspree.io/f/xpzgvqjq" method="POST" class="space-y-4">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+              <input type="text" id="name" name="name" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#BF483F] focus:border-transparent">
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+              <input type="email" id="email" name="email" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#BF483F] focus:border-transparent">
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+              <textarea id="message" name="message" rows="4" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#BF483F] focus:border-transparent"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-[#BF483F] text-white py-2 px-4 rounded-md hover:bg-[#A63A33] transition-colors duration-200 font-medium">
+              Send Message
+            </button>
+          </form>
+        </div>
       </section>
 
       <section class="mb-8 relative">
@@ -71,7 +72,7 @@
           Summary
           <span id="icon-about" class="text-[#BF483F]">−</span>
         </button>
-        <div id="section-about" class="transition-all duration-300 overflow-hidden max-h-[500px]">
+        <div id="section-about" class="small-section-expanded">
           <p>
             Experienced Full Stack Software Developer with proven expertise, specializing in scalable solutions using Ruby on Rails and Vue 3. Built reliable, high-performance features for large datasets across customer-facing SaaS platforms. Strong analytical problem-solving skills complemented by a commitment to process automation, CRM integration, and clean, maintainable code. Trusted to lead and ship high-risk, high-impact features under tight deadlines, balancing speed with stability across the stack.
           </p>
@@ -89,7 +90,7 @@
           Skills
           <span id="icon-skills" class="text-[#BF483F]">−</span>
         </button>
-        <div id="section-skills" class="transition-all duration-300 overflow-hidden max-h-[500px]">
+        <div id="section-skills" class="small-section-expanded">
           <ul class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-sm space-y-1 custom-bullet">
             <li>Ruby on Rails</li>
             <li>Vue 3 / TypeScript</li>
@@ -116,13 +117,16 @@
           Experience
           <span id="icon-experience" class="text-[#BF483F]">−</span>
         </button>
-        <div id="section-experience" class="transition-all duration-300 overflow-hidden max-h-[1500px]">
+        <div id="section-experience" class="large-section-expanded">
           <div class="mb-6 relative">
             <!-- Job accent dot -->
             <div class="job-accent"></div>
-            
-            <h3 class="font-semibold text-gray-900">Full Stack Software Developer</h3>
-            <p class="text-sm text-[#BF483F] font-medium">SPRINGBIG INC., BOCA RATON, FL (REMOTE) | NOV 2021 – CURRENT</p>
+          </div>
+          
+          <h3 class="font-semibold text-gray-900">Full Stack Software Developer</h3>
+          
+          <div class="mb-6 relative">
+            <p class="text-sm text-[#BF483F] font-medium">SPRINGBIG INC., BOCA RATON, FL (REMOTE) | NOVEMBER 2021 – CURRENT</p>
             <p class="text-sm mt-1 mb-2">
               Developed and maintained scalable full-stack features using Ruby on Rails and Vue 3 with TypeScript for a high-volume, event-driven marketing SaaS platform handling thousands of customer transactions and communications daily.
             </p>
@@ -141,7 +145,7 @@
             <div class="job-accent"></div>
             
             <h3 class="font-semibold text-gray-900">QA Analyst and Automations Developer</h3>
-            <p class="text-sm text-[#BF483F] font-medium">SPRINGBIG INC., BOCA RATON, FL (REMOTE) | AUG 2020 – NOV 2021</p>
+            <p class="text-sm text-[#BF483F] font-medium">SPRINGBIG INC., BOCA RATON, FL (REMOTE) | AUGUST 2020 – NOVEMBER 2021</p>
             <p class="text-sm mt-1 mb-2">
               Designed and implemented an end-to-end automated testing platform using TestCafe to support rapid feature development and regression detection.
             </p>
@@ -154,17 +158,6 @@
               <li>Maintained codebase by removing deprecated database columns and updating integration dependencies.</li>
             </ul>
           </div>
-          
-          <div class="mb-6 relative">
-            <!-- Job accent dot -->
-            <div class="job-accent"></div>
-            
-            <h3 class="font-semibold text-gray-900">Systems Planning Engineering Student</h3>
-            <p class="text-sm text-[#BF483F] font-medium">ALECTRA UTILITIES CORP., VAUGHAN, ON | JAN 2019 – DEC 2019</p>
-            <p class="text-sm mt-1">
-              Secured 1-year contract on the Asset Management team. Charged with organizing, maintaining, and managing data for a comprehensive 5-year financial planning report.
-            </p>
-          </div>
 
           <div class="mt-8 pt-6 border-t border-[#CAC7C0]">
             <button
@@ -174,16 +167,35 @@
               Earlier Experience
               <span id="icon-earlier-experience" class="text-[#BF483F]">+</span>
             </button>
-            <div id="section-earlier-experience" class="transition-all duration-300 overflow-hidden max-h-0">
+            <div id="section-earlier-experience" class="large-section-collapsed">
+              <div class="mb-6 relative">
+                <!-- Job accent dot -->
+                <div class="job-accent job-accent-earlier"></div>
+                
+                <h3 class="font-semibold text-gray-900">Systems Planning Engineering Student</h3>
+                <p class="text-sm text-[#BF483F] font-medium">ALECTRA UTILITIES CORP., VAUGHAN, ON | JANUARY 2019 – DECEMBER 2019</p>
+                <p class="text-sm mt-1 mb-2">
+                  Secured 1-year contract on the Asset Management team. Charged with organizing, maintaining, and managing data for a comprehensive 5-year financial planning report.
+                </p>
+                <ul class="text-sm mt-1 space-y-1 custom-bullet-multiline">
+                  <li>Formulated an Excel application to load and analyze vast amounts of customer data. Eliminated prior control issues and software glitches, averting days spent in manual work and rework.</li>
+                  <li>Devised a user-friendly Excel spreadsheet that extracted data and generated graphs. The results led to greater confidence in the output and ability to use the Excel template for future years' use.</li>
+                </ul>
+              </div>
+              
               <div class="mb-6 relative">
                 <!-- Job accent dot -->
                 <div class="job-accent job-accent-earlier"></div>
                 
                 <h3 class="font-semibold text-gray-900">Systems Planning Engineering Student</h3>
                 <p class="text-sm text-[#BF483F] font-medium">HYDRO ONE BRAMPTON INC., BRAMPTON, ON | MAY 2016 – AUGUST 2016</p>
-                <p class="text-sm mt-1">
+                <p class="text-sm mt-1 mb-2">
                   Awarded summer student position to prepare a load growth projection for the Brampton distribution network. This was foundational information for their 2016 System Capacity Study.
                 </p>
+                <ul class="text-sm mt-1 space-y-1 custom-bullet-multiline">
+                  <li>Created a linear projection model using Itron Inc.'s MetrixND software. This industry-leading forecasting engine allowed rapid development of accurate forecasts.</li>
+                  <li>Researched and prepared a summarized report for future growth factors. It encompassed such influences as population, technology advancements, and construction project completion.</li>
+                </ul>
               </div>
               
               <div class="mb-6 relative">
@@ -191,11 +203,15 @@
                 <div class="job-accent job-accent-earlier"></div>
                 
                 <h3 class="font-semibold text-gray-900">Research Assistant</h3>
-                <p class="text-sm text-[#BF483F] font-medium">NATIONAL RESEARCH COUNCIL CANADA (NRC), OTTAWA, ON | MAY - AUG. 2015</p>
+                <p class="text-sm text-[#BF483F] font-medium">NATIONAL RESEARCH COUNCIL CANADA (NRC), OTTAWA, ON | MAY 2015 – AUGUST 2015</p>
                 <p class="text-sm text-gray-600 font-medium">MEASUREMENT SCIENCE & STANDARDS</p>
-                <p class="text-sm mt-1">
+                <p class="text-sm mt-1 mb-2">
                   Performed and assessed drop-casting and spin-coating techniques to explore the work function of new carbon nanomaterials. This was part of the research toward ongoing thin film transistor development.
                 </p>
+                <ul class="text-sm mt-1 space-y-1 custom-bullet-multiline">
+                  <li>Utilized a new Kelvin probe to evaluate instrument testing and presentation. As the first tester, became the resident expert for sample testing and discovered significant data regarding carbon nanomaterials.</li>
+                  <li>Established Standard Operating Procedures (SOP) for the Kelvin probe. The documentation allowed future co-op students to continue the research seamlessly.</li>
+                </ul>
               </div>
               
               <div class="mb-6 relative">
@@ -203,11 +219,15 @@
                 <div class="job-accent job-accent-earlier"></div>
                 
                 <h3 class="font-semibold text-gray-900">Research Assistant</h3>
-                <p class="text-sm text-[#BF483F] font-medium">XEROX RESEARCH CENTRE OF CANADA, MISSISSAUGA, ON | SEPT. - DEC. 2014</p>
+                <p class="text-sm text-[#BF483F] font-medium">XEROX RESEARCH CENTRE OF CANADA, MISSISSAUGA, ON | SEPTEMBER 2014 – DECEMBER 2014</p>
                 <p class="text-sm text-gray-600 font-medium">PRINTED ELECTRONICS</p>
-                <p class="text-sm mt-1">
+                <p class="text-sm mt-1 mb-2">
                   Involved in research for a solution to prepare aqueous-based polyimide dielectric film on a mass scale for printed electronic components.
                 </p>
+                <ul class="text-sm mt-1 space-y-1 custom-bullet-multiline">
+                  <li>Challenged to control temperature fluctuations for curing and evaporation conditions. Demonstrated visible differences in the approach and created a consistent sample for ongoing testing.</li>
+                  <li>Tested the effect of solvents, pH and curing procedures. Resulting team assessments were based on the quality of the transistor circuits that were potentially produced from dielectric film.</li>
+                </ul>
               </div>
               
               <div class="mb-6 relative">
@@ -215,11 +235,15 @@
                 <div class="job-accent job-accent-earlier"></div>
                 
                 <h3 class="font-semibold text-gray-900">Product Development & Customer Solutions</h3>
-                <p class="text-sm text-[#BF483F] font-medium">ECOSYNTHETIX INC., BURLINGTON, ON | MAY - AUG. 2013 | JAN. – APR. 2014</p>
+                <p class="text-sm text-[#BF483F] font-medium">ECOSYNTHETIX INC., BURLINGTON, ON | MAY 2013 – AUGUST 2013 | JANUARY 2014 – APRIL 2014</p>
                 <p class="text-sm text-gray-600 font-medium">PRODUCT DEVELOPMENT & CUSTOMER SOLUTIONS</p>
-                <p class="text-sm mt-1">
+                <p class="text-sm mt-1 mb-2">
                   Positioned in the Product Development and Customer Solutions department for eight months.
                 </p>
+                <ul class="text-sm mt-1 space-y-1 custom-bullet-multiline">
+                  <li>Wrote an SOP for a newly installed dynamic contact angle tester that was also used to capture the impact of starch-based polymers on the hydrophobicity of coated papers.</li>
+                  <li>Utilized standardized TAPPI testing protocols of the industry. Created comparisons between customer formulations - with and without EcoSynthetix's product - for the Marketing Department.</li>
+                </ul>
               </div>
               
               <div class="mb-6 relative">
@@ -227,11 +251,15 @@
                 <div class="job-accent job-accent-earlier"></div>
                 
                 <h3 class="font-semibold text-gray-900">Research Assistant</h3>
-                <p class="text-sm text-[#BF483F] font-medium">PROCESS RESEARCH ORTECH INC., MISSISSAUGA, ON | AUG. - DEC. 2012</p>
+                <p class="text-sm text-[#BF483F] font-medium">PROCESS RESEARCH ORTECH INC., MISSISSAUGA, ON | AUGUST 2012 – DECEMBER 2012</p>
                 <p class="text-sm text-gray-600 font-medium">RESEARCH AND DEVELOPMENT</p>
-                <p class="text-sm mt-1">
+                <p class="text-sm mt-1 mb-2">
                   Joined in research of the most effective purifying method for precious metals in a lab scale.
                 </p>
+                <ul class="text-sm mt-1 space-y-1 custom-bullet-multiline">
+                  <li>Implemented varied system optimization experiments. Results contributed to improvements of continuous on-site pilot scale tests.</li>
+                  <li>Tested all aspects of the process from grinding ores, leeching in hot concentrated acids, to purification with liquid-liquid extraction ratios and solvents.</li>
+                </ul>
               </div>
               
               <div class="mb-6 relative">
@@ -239,11 +267,15 @@
                 <div class="job-accent job-accent-earlier"></div>
                 
                 <h3 class="font-semibold text-gray-900">Research Assistant</h3>
-                <p class="text-sm text-[#BF483F] font-medium">UNIVERSITY OF WATERLOO, WATERLOO, ON | JAN. - APR. 2012</p>
+                <p class="text-sm text-[#BF483F] font-medium">UNIVERSITY OF WATERLOO, WATERLOO, ON | JANUARY 2012 – APRIL 2012</p>
                 <p class="text-sm text-gray-600 font-medium">CHEMICAL ENGINEERING</p>
-                <p class="text-sm mt-1">
+                <p class="text-sm mt-1 mb-2">
                   Taught water concepts to Grade 8 students in the Waterloo area as part of the Centre for Control of Emerging Contaminants outreach program. Assumed additional role in assisting graduate students with their research.
                 </p>
+                <ul class="text-sm mt-1 space-y-1 custom-bullet-multiline">
+                  <li>Ran an experiment with students that included creation of posters and displays. These were used for the Water Institute's World Water Day and for the University Exploration Day.</li>
+                  <li>Collected and formatted data for graduate students to analyze. Researched alternative methods for separating proteins from egg whites.</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -261,21 +293,21 @@
           Education
           <span id="icon-education" class="text-[#BF483F]">−</span>
         </button>
-        <div id="section-education" class="transition-all duration-300 overflow-hidden max-h-[500px]">
+        <div id="section-education" class="small-section-expanded">
           <div class="mb-4 relative">
             <!-- Education accent dot -->
             <div class="job-accent"></div>
             
             <h3 class="font-semibold text-gray-900">MASc. Chemical Engineering (Nanotechnology)</h3>
-            <p class="text-sm text-[#BF483F] font-medium">University of Waterloo, Waterloo, ON | 2018</p>
+            <p class="text-sm text-[#BF483F] font-medium">UNIVERSITY OF WATERLOO, WATERLOO, ON | 2018</p>
             <p class="text-sm mt-1">Thesis: Functionalized Starch Nanoparticles for Pulp-Based Active Packaging</p>
           </div>
-          <div class="relative">
+          <div class="mb-4 relative">
             <!-- Education accent dot -->
             <div class="job-accent"></div>
             
             <h3 class="font-semibold text-gray-900">BASc. Chemical Engineering (Co-op)</h3>
-            <p class="text-sm text-[#BF483F] font-medium">University of Waterloo, Waterloo, ON | 2016</p>
+            <p class="text-sm text-[#BF483F] font-medium">UNIVERSITY OF WATERLOO, WATERLOO, ON | 2010 – 2015</p>
             <ul class="text-sm mt-1 space-y-1 custom-bullet">
               <li>Graduation with Distinction</li>
               <li>Graduate Scholarship</li>
@@ -288,40 +320,44 @@
     </main>
 
     <script>
-      function toggleSection(id) {
-        if (id === 'contact') {
-          const content = document.getElementById(`section-${id}`);
-          if (content.style.display === 'none') {
-            content.style.display = 'block';
+      function toggleSection(sectionId) {
+        if (sectionId === 'contact') {
+          const section = document.getElementById(`section-${sectionId}`);
+          if (section.style.display === 'none') {
+            section.style.display = 'block';
           } else {
-            content.style.display = 'none';
+            section.style.display = 'none';
           }
           return;
         }
-
-        const content = document.getElementById(`section-${id}`);
-        const icon = document.getElementById(`icon-${id}`);
-
-        if (content.classList.contains("max-h-0")) {
-          content.classList.remove("max-h-0");
-          if (id === 'earlier-experience') {
-            content.classList.add("max-h-[1000px]");
-          } else if (id === 'experience') {
-            content.classList.add("max-h-[1500px]");
+        
+        const section = document.getElementById(`section-${sectionId}`);
+        const icon = document.getElementById(`icon-${sectionId}`);
+        
+        // Check if it's a small or large section
+        const isSmallSection = section.classList.contains('small-section-expanded') || section.classList.contains('small-section-collapsed');
+        const isLargeSection = section.classList.contains('large-section-expanded') || section.classList.contains('large-section-collapsed');
+        
+        if (isSmallSection) {
+          if (section.classList.contains('small-section-expanded')) {
+            section.classList.remove('small-section-expanded');
+            section.classList.add('small-section-collapsed');
+            icon.textContent = '+';
           } else {
-            content.classList.add("max-h-[500px]");
+            section.classList.remove('small-section-collapsed');
+            section.classList.add('small-section-expanded');
+            icon.textContent = '−';
           }
-          icon.textContent = '−';
-        } else {
-          if (id === 'earlier-experience') {
-            content.classList.remove("max-h-[1000px]");
-          } else if (id === 'experience') {
-            content.classList.remove("max-h-[1500px]");
+        } else if (isLargeSection) {
+          if (section.classList.contains('large-section-expanded')) {
+            section.classList.remove('large-section-expanded');
+            section.classList.add('large-section-collapsed');
+            icon.textContent = '+';
           } else {
-            content.classList.remove("max-h-[500px]");
+            section.classList.remove('large-section-collapsed');
+            section.classList.add('large-section-expanded');
+            icon.textContent = '−';
           }
-          content.classList.add("max-h-0");
-          icon.textContent = '+';
         }
       }
     </script>
